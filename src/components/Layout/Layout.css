@@ -1,3 +1,16 @@
 .layout {
-    margin: 16px 0 0;
+    margin: 72px 0 0;
+}
+
+.logo {
+    height: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.logo img {
+    width: auto;
+    height: 100%;
 }

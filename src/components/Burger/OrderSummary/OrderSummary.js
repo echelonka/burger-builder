@@ -1,7 +1,8 @@
 import React from 'react'
 import Aux from '../../../hoc/Aux'
+import Button from '../../UI/Button/Button'
 
-const orderSummary = props => {
+export default props => {
   const ingredientSummary = Object.keys(props.ingredients)
     .map(key => (<li key={key}><span style={{textTransform: 'capitalize'}}>{key}</span>: {props.ingredients[key]}</li>))
 
@@ -12,9 +13,10 @@ const orderSummary = props => {
       <ul>
         {ingredientSummary}
       </ul>
+      <p><strong>Total Price: {props.totalPrice.toFixed(2)}</strong></p>
       <p>Continue to Checkout?</p>
+      <Button buttonType='danger' clicked={props.onPurchaseCancelled}>CANCEL</Button>
+      <Button buttonType='success' clicked={props.onPurchaseContinued}>CONTINUE</Button>
     </Aux>
   )
 }
-
-export default orderSummary
